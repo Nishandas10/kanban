@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Icons } from './Icons';
 import '../styles/Header.css';
 
 const Header = ({ grouping, sorting, onGroupingChange, onSortingChange }) => {
@@ -7,9 +8,9 @@ const Header = ({ grouping, sorting, onGroupingChange, onSortingChange }) => {
   return (
     <div className="header">
       <div className="display-button" onClick={() => setIsOpen(!isOpen)}>
-        <span className="icon">≡</span>
+        <Icons.DisplayIcon />
         <span>Display</span>
-        <span className="arrow">{isOpen ? '▲' : '▼'}</span>
+        <Icons.DropdownArrow isOpen={isOpen} />
       </div>
 
       {isOpen && (

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import { Icons } from './Icons';
 import '../styles/Card.css';
 
 const Card = ({ ticket, user, index }) => {
@@ -24,7 +25,12 @@ const Card = ({ ticket, user, index }) => {
           {...provided.dragHandleProps}
         >
           <div className="card-header">
-            <span className="ticket-id">{ticket.id}</span>
+            <div className="header-left">
+              <button className="menu-button">
+                <Icons.Menu />
+              </button>
+              <span className="ticket-id">{ticket.id}</span>
+            </div>
             {user && (
               <div className="user-avatar" title={user.name}>
                 <img 
@@ -54,4 +60,3 @@ const Card = ({ ticket, user, index }) => {
 };
 
 export default Card;
-
